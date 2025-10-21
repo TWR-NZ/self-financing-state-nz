@@ -6,7 +6,6 @@
     <title>Self-Financing State - Understanding NZ Government Finance</title>
     <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
@@ -14,7 +13,6 @@
     
     <script>
         const { createElement: e, useState } = React;
-        const { Info, DollarSign, TrendingUp, AlertCircle, CheckCircle, X, ChevronRight, ChevronDown, ChevronUp } = lucide;
 
         function SelfFinancingStateEducation() {
             const [activeTab, setActiveTab] = useState('basics');
@@ -207,17 +205,12 @@
                 }
             ];
 
-            // Helper to create icon elements
-            const icon = (Icon, props = {}) => e(Icon, { ...props, size: props.size || 20 });
-
             return e('div', { className: 'w-full min-h-screen' },
                 e('div', { className: 'max-w-7xl mx-auto p-6 bg-gradient-to-br from-slate-50 to-blue-50' },
                     // Header
                     e('div', { className: 'bg-white rounded-xl shadow-lg p-8 mb-6' },
                         e('div', { className: 'flex items-start gap-4' },
-                            e('div', { className: 'p-3 bg-blue-100 rounded-lg' },
-                                icon(DollarSign, { size: 32, className: 'text-blue-600' })
-                            ),
+                            e('div', { className: 'p-3 bg-blue-100 rounded-lg text-4xl' }, '💰'),
                             e('div', { className: 'flex-1' },
                                 e('h1', { className: 'text-3xl font-bold text-gray-900 mb-2' }, 'The Self-Financing State'),
                                 e('p', { className: 'text-lg text-gray-600' }, 'Understanding how government finance actually works in New Zealand'),
@@ -267,7 +260,7 @@
                                                     e('p', { className: 'text-sm text-gray-600' }, principle.details)
                                                 ),
                                                 e('div', { className: 'flex items-center gap-2 text-blue-700 font-medium' },
-                                                    icon(CheckCircle, { size: 20 }),
+                                                    e('span', {}, '✓'),
                                                     e('span', { className: 'text-sm' }, principle.keyPoint)
                                                 )
                                             )
@@ -276,7 +269,7 @@
                                 ),
                                 e('div', { className: 'mt-6 p-6 bg-yellow-50 border-l-4 border-yellow-500 rounded-r-lg' },
                                     e('div', { className: 'flex items-start gap-3' },
-                                        icon(Info, { size: 24, className: 'text-yellow-600 flex-shrink-0 mt-1' }),
+                                        e('span', { className: 'text-2xl' }, 'ℹ️'),
                                         e('div', {},
                                             e('h4', { className: 'font-bold text-gray-900 mb-2' }, 'Why This Matters'),
                                             e('p', { className: 'text-gray-700' }, 'Understanding these principles changes how we think about fiscal policy. The question isn\'t "Can we afford it?" but "Do we have the real resources to do it without causing inflation?" This shifts policy debates from artificial financial constraints to genuine economic considerations.')
@@ -332,7 +325,7 @@
                                             e('div', { className: 'font-mono text-sm' }, operationsSteps[animationStep].flow)
                                         ),
                                         e('div', { className: 'flex items-center gap-2 bg-yellow-400/20 rounded-lg p-3' },
-                                            icon(AlertCircle, { size: 20, className: 'flex-shrink-0' }),
+                                            e('span', {}, '⚠️'),
                                             e('span', { className: 'font-medium text-sm' }, 'Key Insight: ' + operationsSteps[animationStep].keyInsight)
                                         )
                                     ),
@@ -353,13 +346,11 @@
 
                                             // Arrow
                                             e('div', {
-                                                className: `transition-colors ${
+                                                className: `text-4xl transition-colors ${
                                                     animationStep === 0 ? 'text-blue-500' :
                                                     animationStep === 3 ? 'text-purple-500' : 'text-gray-400'
                                                 }`
-                                            },
-                                                animationStep === 3 ? icon(ChevronUp, { size: 32 }) : icon(ChevronDown, { size: 32 })
-                                            ),
+                                            }, animationStep === 3 ? '↑' : '↓'),
 
                                             // Settlement Cash Level
                                             e('div', {
@@ -373,13 +364,11 @@
 
                                             // Arrow
                                             e('div', {
-                                                className: `transition-colors ${
+                                                className: `text-4xl transition-colors ${
                                                     animationStep === 1 ? 'text-green-500' :
                                                     animationStep === 2 ? 'text-red-500' : 'text-gray-400'
                                                 }`
-                                            },
-                                                animationStep === 2 ? icon(ChevronUp, { size: 32 }) : icon(ChevronDown, { size: 32 })
-                                            ),
+                                            }, animationStep === 2 ? '↑' : '↓'),
 
                                             // Private Sector
                                             e('div', {
@@ -408,22 +397,15 @@
                                                 className: 'w-full p-4 flex items-start gap-4 hover:bg-gray-50 transition-colors text-left'
                                             },
                                                 e('div', {
-                                                    className: `flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center ${
+                                                    className: `flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-2xl ${
                                                         item.impact === 'high' ? 'bg-red-100' : 'bg-yellow-100'
                                                     }`
-                                                },
-                                                    icon(X, { size: 24, className: item.impact === 'high' ? 'text-red-600' : 'text-yellow-600' })
-                                                ),
+                                                }, '✗'),
                                                 e('div', { className: 'flex-1' },
                                                     e('h3', { className: 'font-bold text-gray-900 mb-1' }, 'MYTH: ' + item.myth),
                                                     e('p', { className: 'text-sm text-green-700 font-medium' }, 'REALITY: ' + item.reality)
                                                 ),
-                                                icon(ChevronRight, {
-                                                    size: 20,
-                                                    className: `text-gray-400 flex-shrink-0 transition-transform ${
-                                                        selectedMyth === item.id ? 'rotate-90' : ''
-                                                    }`
-                                                })
+                                                e('span', { className: 'text-xl text-gray-400' }, selectedMyth === item.id ? '▼' : '▶')
                                             ),
                                             selectedMyth === item.id && e('div', { className: 'p-4 bg-gray-50 border-t-2 border-gray-200' },
                                                 e('h4', { className: 'font-bold text-gray-900 mb-2' }, 'Explanation:'),
@@ -440,7 +422,7 @@
                                 ),
                                 e('div', { className: 'mt-6 p-6 bg-gradient-to-r from-green-50 to-emerald-50 rounded-lg border-2 border-green-300' },
                                     e('h3', { className: 'font-bold text-gray-900 mb-3 flex items-center gap-2' },
-                                        icon(CheckCircle, { size: 24, className: 'text-green-600' }),
+                                        e('span', {}, '✓'),
                                         'The Bottom Line'
                                     ),
                                     e('p', { className: 'text-gray-700' }, 'These myths persist because they match our intuition from household finance, but government finance operates fundamentally differently. As the monopoly issuer of NZ dollars, the government faces different constraints than currency users. Understanding this distinction is essential for sound economic policy.')
@@ -471,12 +453,7 @@
                                                     }`
                                                 }, constraint.importance)
                                             ),
-                                            icon(ChevronRight, {
-                                                size: 24,
-                                                className: `text-gray-400 flex-shrink-0 transition-transform ${
-                                                    expandedSection === idx ? 'rotate-90' : ''
-                                                }`
-                                            })
+                                            e('span', { className: 'text-xl text-gray-400' }, expandedSection === idx ? '▼' : '▶')
                                         ),
                                         expandedSection === idx && e('div', { className: 'p-5 bg-gray-50 border-t-2' },
                                             e('div', { className: 'space-y-3' },
@@ -514,20 +491,20 @@
                                 ...policyImplications.map((policy, idx) =>
                                     e('div', { key: idx, className: 'bg-white rounded-lg p-6 border-2 border-gray-200' },
                                         e('h3', { className: 'font-bold text-xl text-gray-900 mb-4 flex items-center gap-2' },
-                                            icon(TrendingUp, { size: 24, className: 'text-blue-600' }),
+                                            e('span', {}, '📈'),
                                             policy.area
                                         ),
                                         e('div', { className: 'grid md:grid-cols-2 gap-4 mb-4' },
                                             e('div', { className: 'p-4 bg-red-50 rounded-lg border-l-4 border-red-500' },
                                                 e('div', { className: 'flex items-center gap-2 mb-2' },
-                                                    icon(X, { size: 20, className: 'text-red-600' }),
+                                                    e('span', {}, '✗'),
                                                     e('span', { className: 'font-bold text-red-900' }, 'Old Thinking')
                                                 ),
                                                 e('p', { className: 'text-gray-700 italic' }, '"' + policy.wrong + '"')
                                             ),
                                             e('div', { className: 'p-4 bg-green-50 rounded-lg border-l-4 border-green-500' },
                                                 e('div', { className: 'flex items-center gap-2 mb-2' },
-                                                    icon(CheckCircle, { size: 20, className: 'text-green-600' }),
+                                                    e('span', {}, '✓'),
                                                     e('span', { className: 'font-bold text-green-900' }, 'New Framing')
                                                 ),
                                                 e('p', { className: 'text-gray-700 font-medium' }, '"' + policy.right + '"')
