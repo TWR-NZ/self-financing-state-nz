@@ -1,16 +1,15 @@
 {
   "files": {
-    "main.css": "/self-financing-state-nz/static/css/main.f855e6bc.css",
-    "main.js": "/self-financing-state-nz/static/js/main.ee6e80d6.js",
+    "main.css": "/self-financing-state-nz/static/css/main.0a036fe9.css",
+    "main.js": "/self-financing-state-nz/static/js/main.7d4aca9b.js",
     "static/js/453.789fb347.chunk.js": "/self-financing-state-nz/static/js/453.789fb347.chunk.js",
-    "static/media/logo.svg": "/self-financing-state-nz/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/self-financing-state-nz/index.html",
-    "main.f855e6bc.css.map": "/self-financing-state-nz/static/css/main.f855e6bc.css.map",
-    "main.ee6e80d6.js.map": "/self-financing-state-nz/static/js/main.ee6e80d6.js.map",
+    "main.0a036fe9.css.map": "/self-financing-state-nz/static/css/main.0a036fe9.css.map",
+    "main.7d4aca9b.js.map": "/self-financing-state-nz/static/js/main.7d4aca9b.js.map",
     "453.789fb347.chunk.js.map": "/self-financing-state-nz/static/js/453.789fb347.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f855e6bc.css",
-    "static/js/main.ee6e80d6.js"
+    "static/css/main.0a036fe9.css",
+    "static/js/main.7d4aca9b.js"
   ]
 }
